@@ -38,7 +38,7 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
     "files.insertFinalNewline": true,
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
     "javascript.implicitProjectConfig.experimentalDecorators": true,
-    "javascript.validate.enable": true,
+    "javascript.validate.enable": false,
     "prettier.eslintIntegration": true,
     "eslint.autoFixOnSave": true,
     "[json]": {
