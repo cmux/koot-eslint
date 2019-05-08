@@ -1,16 +1,16 @@
 # eslint-config-koot
 
-_Koot.js_ 开发及其莫把项目使用的 _ESLint_ 配置规则。
+_Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daqi](https://github.com/daqi) 提供的规则开发。
 
 ## 如何使用
 
-1. 安装 `eslint-config-koot`
+1. 安装 `eslint` 和 `eslint-config-koot` 为开发依赖包
 
 ```bash
-> npm i eslint-config-koot --save-dev
+> npm i eslint eslint-config-koot --save-dev
 ```
 
-2. 编辑 _ESLint_ 配置文件 (如 `.eslintrc`)，将 `koot` 添加至 `extends` 选项中
+2. 添加或编辑 _ESLint_ 配置文件 (如 `.eslintrc`)，将 `koot` 添加至 `extends` 选项中
 
 ```json
 {
@@ -68,6 +68,6 @@ _Koot.js_ 开发及其莫把项目使用的 _ESLint_ 配置规则。
 }
 ```
 
-5. 如有必要，重启 _VS Code_
+5. 重启 _VS Code_
 
 现在，除了 _ESLint_ 的自动代码检测外，_VS Code_ 也有了在保存代码文件时自动修正书写习惯的能力。

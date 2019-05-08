@@ -4,8 +4,15 @@
     "description": "ESLint configuration used by Koot.js & its boilerplate",
     "author": {
         "name": "diablohu",
-        "email": "diablohudream@gmail.com"
+        "email": "diablohudream@gmail.com",
+        "url": "https://diablohu.com"
     },
+    "contributors": [
+        {
+            "name": "daqi",
+            "url": "https://github.com/daqi"
+        }
+    ],
     "homepage": "https://github.com/cmux/eslint-config-koot#readme",
     "license": "Apache-2.0",
     "repository": {
