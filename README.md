@@ -18,15 +18,26 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 }
 ```
 
-## 推荐的开发环境
+## 推荐使用的开发环境
 
-除了使用该 _ESLint_ 配置外，我们还推荐使用 _VS Code (Visual Studio Code)_ 配合 _Prettier_，以下是完整的环境配置方案：
+使用下述方案，可强化开发体验
+
+1. 在保存代码文件时，自动对部分语法和编写习惯进行修复
+2. 在 `git commit` 之前，自动对部分语法和编写习惯进行修复
+
+需要使用 _VS Code (Visual Studio Code)_ ，以下是完整的配置方案：
 
 1. 下载安装 _VS Code_ : https://code.visualstudio.com/download
 2. 在 _VS Code_ 中安装以下扩展:
     - [_ESLint_](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
     - [_Prettier_](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-3. 在项目根目录中创建名为 `.vscode` 的目录，并添加名为 `settings.json` 的文件，其内容为：
+3. 安装 `prettier` `husky` 以及 `lint-staged` 为开发依赖包
+
+```bash
+> npm i prettier husky lint-staged --save-dev
+```
+
+4. 在项目根目录中创建名为 `.vscode` 的目录，并在该文件夹内创建名为 `settings.json` 的文件，其内容为：
 
 ```json
 {
@@ -53,7 +64,7 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 }
 ```
 
-4. 在项目根目录中创建名为 `.prettierrc` 的文件，其内容为：
+5. 在项目根目录中创建名为 `.prettierrc` 的文件，其内容为：
 
 ```json
 {
@@ -68,6 +79,20 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 }
 ```
 
-5. 重启 _VS Code_
+6. 修改 `package.json`，添加以下内容
 
-现在，除了 _ESLint_ 的自动代码检测外，_VS Code_ 也有了在保存代码文件时自动修正书写习惯的能力。
+```json
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx,json,md}": [
+            "prettier --write",
+            "git add"
+        ]
+    }
+```
+
+7. 重启 _VS Code_
