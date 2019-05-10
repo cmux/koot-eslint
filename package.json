@@ -38,12 +38,31 @@
         "eslint-plugin-react-hooks": "^1.6.0"
     },
     "devDependencies": {
-        "eslint": "5.16.0"
+        "eslint": "5.16.0",
+        "husky": "^2.2.0",
+        "lint-staged": "^8.1.6",
+        "prettier": "^1.17.0"
     },
     "peerDependencies": {
         "eslint": ">= 5"
     },
     "bugs": {
         "url": "https://github.com/cmux/eslint-config-koot"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
+            "prettier --write",
+            "git add"
+        ],
+        "*.{json,md}": [
+            "prettier --write",
+            "git add"
+        ]
     }
 }

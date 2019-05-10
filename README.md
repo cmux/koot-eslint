@@ -10,12 +10,14 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 > npm i eslint eslint-config-koot --save-dev
 ```
 
-2. 添加或编辑 _ESLint_ 配置文件 (如 `.eslintrc`)，将 `koot` 添加至 `extends` 选项中
+2. 添加或编辑 _ESLint_ 配置文件 (如 `.eslintrc.js`)，将 `koot` 添加至 `extends` 选项中
 
-```json
-{
-    "extends": ["koot"]
-}
+```javascript
+module.exports = {
+    // ...
+    extends: ['koot']
+    // ...
+};
 ```
 
 ## 推荐使用的开发环境
@@ -76,19 +78,19 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 }
 ```
 
-5. 在项目根目录中创建名为 `.prettierrc` 的文件，其内容为：
+5. 在项目根目录中创建名为 `.prettierrc.js` 的文件，其内容为：
 
-```json
-{
-    "printWidth": 80,
-    "singleQuote": true,
-    "tabWidth": 4,
-    "jsxBracketSameLine": false,
-    "useTabs": false,
-    "semi": true,
-    "bracketSpacing": true,
-    "eslintIntegration": true
-}
+```javascript
+module.exports = {
+    printWidth: 80,
+    singleQuote: true,
+    tabWidth: 4,
+    jsxBracketSameLine: false,
+    useTabs: false,
+    semi: true,
+    bracketSpacing: true,
+    eslintIntegration: true
+};
 ```
 
 6. 修改 `package.json`，添加以下内容
@@ -100,7 +102,12 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
         }
     },
     "lint-staged": {
-        "*.{js,jsx,ts,tsx,json,md}": [
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
+            "prettier --write",
+            "git add"
+        ],
+        "*.{json,md}": [
             "prettier --write",
             "git add"
         ]

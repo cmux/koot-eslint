@@ -1,15 +1,6 @@
 module.exports = {
     extends: ['react-app', 'prettier', 'prettier/react'],
-    plugins: ['prettier'],
-    env: {
-        browser: true,
-        node: true,
-        commonjs: true,
-        amd: true,
-        es6: true,
-        mocha: true,
-        jquery: true
-    },
+
     parser: 'babel-eslint',
     parserOptions: {
         ecmaVersion: 2019,
@@ -20,25 +11,37 @@ module.exports = {
             jsx: true
         }
     },
-    globals: {
-        __DIST__: false,
-        __DEV__: false,
-        __CLIENT__: false,
-        __SERVER__: false,
-        __SPA__: false,
-        __QA__: false,
-        __REDUX_STATE__: false,
-        __: false,
-        KootExtend: false,
-        ReducerTypes: false,
-        ActionTypes: false,
-        Api: false,
-        Store: false,
-        Project: false
+
+    env: {
+        browser: true,
+        node: true,
+        commonjs: true,
+        es6: true,
+        amd: true
     },
+
+    globals: {
+        __: 'readonly',
+        __CLIENT__: 'readonly',
+        __DEV__: 'readonly',
+        __DIST__: 'readonly',
+        __REDUX_STATE__: 'readonly',
+        __SERVER__: 'readonly',
+        __SPA__: 'readonly',
+        KootExtend: 'readonly',
+        ReducerTypes: 'readonly',
+        ActionTypes: 'readonly',
+        Api: 'readonly',
+        Store: 'readonly',
+        Project: 'readonly'
+    },
+
+    plugins: ['prettier'],
+
     settings: {
         'import/ignore': ['node_modules']
     },
+
     rules: {
         'react/jsx-filename-extension': [
             1,
