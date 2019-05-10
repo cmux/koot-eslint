@@ -52,6 +52,13 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
     "javascript.validate.enable": false,
     "prettier.eslintIntegration": true,
     "eslint.autoFixOnSave": true,
+    "eslint.validate": [
+        "json",
+        "javascript",
+        "javascriptreact",
+        { "language": "typescript", "autoFix": true },
+        { "language": "typescriptreact", "autoFix": true }
+    ],
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
