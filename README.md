@@ -36,7 +36,7 @@ module.exports = {
 3. 安装 `prettier` `husky` 以及 `lint-staged` 为开发依赖包
 
 ```bash
-> npm i prettier husky lint-staged --save-dev
+> npm i prettier prettier-eslint husky lint-staged --save-dev
 ```
 
 4. 在项目根目录中创建名为 `.vscode` 的目录，并在该文件夹内创建名为 `settings.json` 的文件，其内容为：
@@ -52,7 +52,6 @@ module.exports = {
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
     "javascript.implicitProjectConfig.experimentalDecorators": true,
     "javascript.validate.enable": false,
-    "prettier.eslintIntegration": true,
     "eslint.autoFixOnSave": true,
     "eslint.validate": [
         "javascript",
