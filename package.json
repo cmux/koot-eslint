@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-koot",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "ESLint configuration used by Koot.js & its boilerplate",
     "author": {
         "name": "diablohu",
