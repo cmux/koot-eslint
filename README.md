@@ -101,13 +101,7 @@ module.exports = {
         }
     },
     "lint-staged": {
-        "*.{js,jsx,cjs,mjs}": [
-            "eslint --fix",
-            "prettier --write",
-            "git add"
-        ],
-        "*.{ts,tsx}": [
-            "tsc --noEmit",
+        "*.{js,jsx,cjs,mjs,ts,tsx}": [
             "eslint --fix",
             "prettier --write",
             "git add"
