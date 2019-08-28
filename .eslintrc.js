@@ -1,1 +1,3 @@
-module.exports = require('./index');
+const { overrides, ...rules } = require('./index');
+
+module.exports = rules;

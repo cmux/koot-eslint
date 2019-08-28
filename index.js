@@ -55,5 +55,17 @@ module.exports = {
         'import/newline-after-import': 'error',
         'import/no-extraneous-dependencies': 0,
         'import/prefer-default-export': 0
-    }
+    },
+
+    overrides: [
+        {
+            files: '**/*.+(ts|tsx)',
+            extends: ['plugin:@typescript-eslint/recommended'],
+            parser: '@typescript-eslint/parser',
+            plugins: ['prettier', '@typescript-eslint'],
+            rules: {
+                '@typescript-eslint/no-angle-bracket-type-assertion': 0
+            }
+        }
+    ]
 };
