@@ -1,3 +1,7 @@
+const tsRecommended1 = require('@typescript-eslint/eslint-plugin/dist/configs/eslint-recommended.js')
+    .default;
+const tsRecommended2 = require('@typescript-eslint/eslint-plugin/dist/configs/recommended.json');
+
 module.exports = {
     extends: ['react-app', 'prettier', 'prettier/react'],
 
@@ -91,7 +95,7 @@ module.exports = {
     overrides: [
         {
             files: '**/*.+(ts|tsx)',
-            extends: ['plugin:@typescript-eslint/recommended'],
+            // extends: ['plugin:@typescript-eslint/recommended'],
             parser: '@typescript-eslint/parser',
             parserOptions: {
                 // typescript-eslint specific options
@@ -99,6 +103,8 @@ module.exports = {
             },
             plugins: ['prettier', '@typescript-eslint'],
             rules: {
+                ...tsRecommended1.overrides[0].rules,
+                ...tsRecommended2.rules,
                 '@typescript-eslint/no-angle-bracket-type-assertion': 0
             }
         }
