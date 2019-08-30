@@ -54,7 +54,36 @@ module.exports = {
         'import/imports-first': ['error', 'absolute-first'],
         'import/newline-after-import': 'error',
         'import/no-extraneous-dependencies': 0,
-        'import/prefer-default-export': 0
+        'import/prefer-default-export': 0,
+
+        // 生产禁止使用console
+        'no-console': 1,
+
+        // 不允许多个空行
+        'no-multiple-empty-lines': [
+            1,
+            {
+                max: 2,
+                maxEOF: 1,
+                maxBOF: 1
+            }
+        ],
+
+        /**
+         * 禁止使用不安全的生命周期方法 componentWillMount, componentWillReceiveProps, componentWillUpdate
+         */
+        'react/no-unsafe': [2, { checkAliases: true }],
+
+        /**
+         * 禁止 jsx 中使用无用的引号
+         */
+        'react/jsx-curly-brace-presence': [1, 'never'],
+
+        /**
+         * jsx 中禁止使用bind和Render里禁止动态方法
+         * @category JSX-specific
+         */
+        'react/jsx-no-bind': 1
     },
 
     overrides: [
@@ -62,6 +91,10 @@ module.exports = {
             files: '**/*.+(ts|tsx)',
             extends: ['plugin:@typescript-eslint/recommended'],
             parser: '@typescript-eslint/parser',
+            parserOptions: {
+                // typescript-eslint specific options
+                warnOnUnsupportedTypeScriptVersion: true
+            },
             plugins: ['prettier', '@typescript-eslint'],
             rules: {
                 '@typescript-eslint/no-angle-bracket-type-assertion': 0
