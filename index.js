@@ -56,12 +56,12 @@ module.exports = {
         'import/no-extraneous-dependencies': 0,
         'import/prefer-default-export': 0,
 
-        // 生产禁止使用console
-        'no-console': 1,
+        /** 警告 console 的使用 */
+        'no-console': 'warn',
 
-        // 不允许多个空行
+        /** 警告多个空行 */
         'no-multiple-empty-lines': [
-            1,
+            'warn',
             {
                 max: 2,
                 maxEOF: 1,
@@ -69,21 +69,23 @@ module.exports = {
             }
         ],
 
-        /**
-         * 禁止使用不安全的生命周期方法 componentWillMount, componentWillReceiveProps, componentWillUpdate
-         */
-        'react/no-unsafe': [2, { checkAliases: true }],
+        /** JSX: 不允许使用不安全的生命周期方法 (eg: componentWillMount) */
+        'react/no-unsafe': ['error', { checkAliases: true }],
 
-        /**
-         * 禁止 jsx 中使用无用的引号
-         */
-        'react/jsx-curly-brace-presence': [1, 'never'],
+        /** JSX: 不允许使用无用的引号 */
+        'react/jsx-curly-brace-presence': ['warn', 'never'],
 
-        /**
-         * jsx 中禁止使用bind和Render里禁止动态方法
-         * @category JSX-specific
-         */
-        'react/jsx-no-bind': 1
+        /** JSX: 不允许使用 bind 和 Render 里禁止动态方法 */
+        'react/jsx-no-bind': 'warn',
+
+        /** 如果变量无改变，优先使用 const */
+        'prefer-const': [
+            'warn',
+            {
+                destructuring: 'any',
+                ignoreReadBeforeAssign: false
+            }
+        ]
     },
 
     overrides: [
