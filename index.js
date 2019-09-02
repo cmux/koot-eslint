@@ -47,13 +47,6 @@ module.exports = {
     },
 
     rules: {
-        'react/jsx-filename-extension': [
-            1,
-            {
-                extensions: ['.js', '.jsx', '.ts', '.tsx']
-            }
-        ],
-        'react/prop-types': 0,
         'no-underscore-dangle': 0,
         'import/imports-first': ['error', 'absolute-first'],
         'import/newline-after-import': 'error',
@@ -73,15 +66,6 @@ module.exports = {
             }
         ],
 
-        /** JSX: 不允许使用不安全的生命周期方法 (eg: componentWillMount) */
-        'react/no-unsafe': ['error', { checkAliases: true }],
-
-        /** JSX: 不允许使用无用的引号 */
-        'react/jsx-curly-brace-presence': ['warn', 'never'],
-
-        /** JSX: 不允许使用 bind 和 Render 里禁止动态方法 */
-        'react/jsx-no-bind': 'warn',
-
         /** 如果变量无改变，优先使用 const */
         'prefer-const': [
             'warn',
@@ -89,7 +73,38 @@ module.exports = {
                 destructuring: 'any',
                 ignoreReadBeforeAssign: false
             }
-        ]
+        ],
+
+        // React / JSX
+        'react/jsx-filename-extension': [
+            1,
+            {
+                extensions: ['.js', '.jsx', '.ts', '.tsx']
+            }
+        ],
+        'react/prop-types': 0,
+        /** React: 警告使用箭头函数编写的生命周期方法 */
+        'react/no-arrow-function-lifecycle': 'warn',
+        /** React: 不允许使用不安全的生命周期方法 (eg: componentWillMount) */
+        'react/no-unsafe': ['error', { checkAliases: true }],
+        /** React: 禁止直接修改 state */
+        'react/no-direct-mutation-state': 'error',
+        /** React: 禁止在 setState 中调用 state (如有类似需求请在 setState 中使用函数用法) */
+        'react/no-access-state-in-setstate': 'error',
+        /** React: 禁止使用 isMounted */
+        'react/no-is-mounted': 'error',
+        /** React: 禁止使用 ReactDOM.render() 的返回值 */
+        'react/no-render-return-value': 'error',
+        /** React: 禁止使用字符串形式的 ref */
+        'react/no-string-refs': 'error',
+        /** React: 禁止在函数组件中使用 this */
+        'react/no-this-in-sfc': 'error',
+        /** React: 禁止空 HTML/DOM 元素 (void element) 出现子元素 (children) */
+        'react/void-dom-elements-no-children': 'error',
+        /** JSX: 禁止使用无用的引号 */
+        'react/jsx-curly-brace-presence': ['warn', 'never'],
+        /** JSX: 警告在 render 中使用使用的 bind 或箭头函数 */
+        'react/jsx-no-bind': 'warn'
     },
 
     overrides: [
