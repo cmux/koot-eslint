@@ -4,8 +4,6 @@
 
 新增规则
 
--   `'react/no-arrow-function-lifecycle': 'warn'`
-    <br>React: 警告使用箭头函数编写的生命周期方法
 -   `'react/no-direct-mutation-state': 'error'`
     <br>React: 禁止直接修改 state
 -   `'react/no-access-state-in-setstate': 'error'`

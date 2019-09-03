@@ -84,7 +84,7 @@ module.exports = {
         ],
         'react/prop-types': 0,
         /** React: 警告使用箭头函数编写的生命周期方法 */
-        'react/no-arrow-function-lifecycle': 'warn',
+        // 'react/no-arrow-function-lifecycle': 'warn',
         /** React: 不允许使用不安全的生命周期方法 (eg: componentWillMount) */
         'react/no-unsafe': ['error', { checkAliases: true }],
         /** React: 禁止直接修改 state */
