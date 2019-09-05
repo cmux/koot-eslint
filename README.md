@@ -1,4 +1,4 @@
-# eslint-config-koot
+# koot-eslint
 
 _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daqi](https://github.com/daqi) 提供的规则开发。
 
@@ -10,7 +10,7 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 > npm i eslint eslint-config-koot --save-dev
 ```
 
-2. 添加或编辑 _ESLint_ 配置文件 (如 `.eslintrc.js`)，将 `koot` 添加至 `extends` 选项中
+2. 添加或编辑 _ESLint_ 配置文件 (`.eslintrc.js`)，将 `koot` 添加至 `extends` 选项中
 
 ```javascript
 module.exports = {
@@ -22,7 +22,7 @@ module.exports = {
 
 ## 推荐使用的开发环境
 
-使用下述方案，可强化开发体验
+使用下述方案，可强化开发体验：
 
 1. 在保存代码文件时，自动对部分语法和编写习惯进行修复
 2. 在 `git commit` 之前，自动对部分语法和编写习惯进行修复
@@ -33,7 +33,7 @@ module.exports = {
 2. 在 _VS Code_ 中安装以下扩展:
     - [_ESLint_](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
     - [_Prettier_](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-3. 安装 `prettier` `husky` 以及 `lint-staged` 为开发依赖包
+3. 安装 `prettier` `prettier-eslint` `husky` 以及 `lint-staged` 为开发依赖包
 
 ```bash
 > npm i prettier prettier-eslint husky lint-staged --save-dev

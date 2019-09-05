@@ -1,72 +1,79 @@
-//------------------------------------------------------------------------------
-// Rule Definition
-//------------------------------------------------------------------------------
-const LIFE_CYCLE_LIST = [
-    'render',
-    'getSnapshotBeforeUpdate',
+/**
+ * @fileoverview It is not necessary to use arrow function for lifecycle methods
+ * @author Tan Nguyen
+ */
+
+const Components = require('eslint-plugin-react/lib/util/Components');
+const astUtil = require('eslint-plugin-react/lib/util/ast');
+
+const lifecycleMethods = [
+    'getDefaultProps',
+    'getInitialState',
+    'getChildContext',
+    'getDerivedStateFromProps',
+    'componentWillMount',
+    'UNSAFE_componentWillMount',
     'componentDidMount',
-    'componentWillUnmount',
+    'componentWillReceiveProps',
+    'UNSAFE_componentWillReceiveProps',
     'shouldComponentUpdate',
+    'componentWillUpdate',
+    'UNSAFE_componentWillUpdate',
+    'getSnapshotBeforeUpdate',
     'componentDidUpdate',
-    'componentDidCatch'
+    'componentDidCatch',
+    'componentWillUnmount',
+    'render'
 ];
 
 module.exports = {
     meta: {
         docs: {
             description:
-                'React component lifecycle method should not be arrow function',
+                'It is not necessary to use arrow function for lifecycle methods',
             category: 'Best Practices',
-            recommended: true
+            recommended: false
         },
-        schema: [
-            // fill in your schema
-        ]
+        schema: []
     },
 
-    create: function(context) {
-        function checkArrowLifecycle(node) {
-            const methods = node.body.body;
-            if (methods && methods.length) {
-                const properties = methods.filter(
-                    method =>
-                        method.type === 'ClassProperty' &&
-                        method.value &&
-                        method.value.type === 'ArrowFunctionExpression'
-                );
-                if (properties.length) {
-                    properties.forEach(item => {
-                        if (LIFE_CYCLE_LIST.includes(item.key.name)) {
-                            context.report({
-                                node: item,
-                                message:
-                                    "React component's lifecycle '{{ name }}' method should not be arrow function",
-                                data: {
-                                    name: item.key.name
-                                }
-                            });
+    create: Components.detect((context, components) => {
+        /**
+         * @param {Array} properties list of component properties
+         */
+        function reportNoArrowFunctionLifecycle(properties) {
+            properties.forEach(node => {
+                const propertyName = astUtil.getPropertyName(node);
+                const nodeType = node.value && node.value.type;
+                const isLifecycleMethod =
+                    lifecycleMethods.indexOf(propertyName) !== -1;
+
+                if (
+                    nodeType === 'ArrowFunctionExpression' &&
+                    isLifecycleMethod
+                ) {
+                    context.report({
+                        node,
+                        message:
+                            '{{propertyName}} is a React lifecycle method, and should not be an arrow function. Use an instance method instead.',
+                        data: {
+                            propertyName
                         }
                     });
                 }
-            }
+            });
         }
-        // variables should be defined here
-
-        //----------------------------------------------------------------------
-        // Helpers
-        //----------------------------------------------------------------------
-
-        // any helper functions should go here or else delete this section
-
-        //----------------------------------------------------------------------
-        // Public
-        //----------------------------------------------------------------------
 
         return {
-            // give me methods
-            ClassDeclaration(node) {
-                checkArrowLifecycle(node);
+            'Program:exit': function() {
+                const list = components.list();
+                Object.keys(list).forEach(component => {
+                    const properties = astUtil.getComponentProperties(
+                        list[component].node
+                    );
+                    reportNoArrowFunctionLifecycle(properties);
+                });
             }
         };
-    }
+    })
 };

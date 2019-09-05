@@ -38,10 +38,8 @@ jspm_packages
 # koot.js
 *.log
 .DS_Store
-/.projects
 *.lock
 package-lock.json
 .koot.*
-test/cases/config/samples
 logs
-dist
+components/

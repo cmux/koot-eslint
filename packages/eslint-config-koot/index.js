@@ -40,7 +40,7 @@ module.exports = {
         Project: 'readonly'
     },
 
-    plugins: ['prettier'],
+    plugins: ['prettier', 'koot'],
 
     settings: {
         'import/ignore': ['node_modules']
@@ -83,8 +83,6 @@ module.exports = {
             }
         ],
         'react/prop-types': 0,
-        /** React: 警告使用箭头函数编写的生命周期方法 */
-        // 'react/no-arrow-function-lifecycle': 'warn',
         /** React: 不允许使用不安全的生命周期方法 (eg: componentWillMount) */
         'react/no-unsafe': ['error', { checkAliases: true }],
         /** React: 禁止直接修改 state */
@@ -104,7 +102,10 @@ module.exports = {
         /** JSX: 禁止使用无用的引号 */
         'react/jsx-curly-brace-presence': ['warn', 'never'],
         /** JSX: 警告在 render 中使用使用的 bind 或箭头函数 */
-        'react/jsx-no-bind': 'warn'
+        'react/jsx-no-bind': 'warn',
+
+        /** React: 警告使用箭头函数编写的生命周期方法 */
+        'koot/lifecycle-no-arrow-function': 'warn'
     },
 
     overrides: [
