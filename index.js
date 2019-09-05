@@ -117,11 +117,14 @@ module.exports = {
                 warnOnUnsupportedTypeScriptVersion: true
             },
             plugins: ['prettier', '@typescript-eslint'],
-            rules: {
-                ...tsRecommended1.overrides[0].rules,
-                ...tsRecommended2.rules,
-                '@typescript-eslint/no-angle-bracket-type-assertion': 0
-            }
+            rules: Object.assign(
+                {},
+                tsRecommended1.overrides[0].rules,
+                tsRecommended2.rules,
+                {
+                    '@typescript-eslint/no-angle-bracket-type-assertion': 0
+                }
+            )
         }
     ]
 };

@@ -1,6 +1,6 @@
 {
     "name": "eslint-config-koot",
-    "version": "1.2.1",
+    "version": "1.2.2",
     "description": "ESLint configuration used by Koot.js & its boilerplate",
     "author": {
         "name": "diablohu",
@@ -25,12 +25,12 @@
     ],
     "scripts": {},
     "dependencies": {
-        "@typescript-eslint/eslint-plugin": "^2.0.0",
-        "@typescript-eslint/parser": "^2.0.0",
+        "@typescript-eslint/eslint-plugin": "^2.1.0",
+        "@typescript-eslint/parser": "^2.1.0",
         "babel-eslint": "^10.0.3",
-        "eslint-config-prettier": "^6.1.0",
+        "eslint-config-prettier": "^6.2.0",
         "eslint-config-react-app": "^5.0.1",
-        "eslint-plugin-flowtype": "^4.2.0",
+        "eslint-plugin-flowtype": "^4.3.0",
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-prettier": "^3.1.0",
@@ -40,6 +40,7 @@
     "devDependencies": {
         "eslint": "^5.16.0",
         "husky": "^3.0.5",
+        "jest": "^24.9.0",
         "lint-staged": "^9.2.5",
         "prettier": "^1.18.2",
         "prettier-eslint": "^9.0.0",
