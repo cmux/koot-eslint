@@ -43,6 +43,7 @@
         "eslint-config-koot": "file:./packages/eslint-config-koot",
         "eslint-plugin-koot": "file:./packages/eslint-plugin-koot",
         "fs-extra": "^8.1.0",
+        "glob-promise": "^3.4.0",
         "husky": "^3.0.5",
         "inquirer": "^7.0.0",
         "jest": "^24.9.0",
