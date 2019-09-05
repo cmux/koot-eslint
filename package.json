@@ -6,7 +6,7 @@
         "doc": "docsify serve docs",
         "bootstrap": "node bootstrap.js",
         "reset": "node ./reset.js",
-        "publish": "lerna publish"
+        "publish": "node ./publish.js"
     },
     "repository": {
         "type": "git",
@@ -38,6 +38,7 @@
     "devDependencies": {
         "chalk": "^2.4.2",
         "cli-spinners": "^2.2.0",
+        "crlf": "^1.1.1",
         "eslint": "^6.3.0",
         "eslint-config-koot": "file:./packages/eslint-config-koot",
         "eslint-plugin-koot": "file:./packages/eslint-plugin-koot",
