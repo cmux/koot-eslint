@@ -1,6 +1,14 @@
-const { overrides, ...rules } = require('./index');
-
 module.exports = {
-    ...rules,
-    overrides
+    root: true,
+    extends: 'koot',
+    env: {
+        node: true,
+        commonjs: true,
+        amd: true,
+        es6: true,
+        jest: true
+    },
+    rules: {
+        'no-console': 0
+    }
 };

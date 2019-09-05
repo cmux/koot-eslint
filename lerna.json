@@ -1,0 +1,12 @@
+{
+    "version": "1.2.2",
+    "packages": ["packages/*"],
+    "command": {
+        "bootstrap": {
+            "npmClientArgs": ["--no-package-lock"]
+        },
+        "publish": {
+            "ignoreChanges": ["**/__tests__/**", "**/*.md"]
+        }
+    }
+}

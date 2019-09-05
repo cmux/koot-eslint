@@ -1,0 +1,37 @@
+{
+    "name": "eslint-plugin-koot",
+    "version": "1.2.2",
+    "description": "ESLint plugins used by Koot.js & its boilerplate",
+    "author": {
+        "name": "diablohu",
+        "email": "diablohudream@gmail.com",
+        "url": "https://diablohu.com"
+    },
+    "contributors": [
+        {
+            "name": "daqi",
+            "url": "https://github.com/daqi"
+        }
+    ],
+    "homepage": "https://github.com/cmux/koot-eslint#readme",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cmux/koot-eslint.git"
+    },
+    "keywords": [
+        "eslint",
+        "eslintplugin"
+    ],
+    "scripts": {},
+    "dependencies": {
+        "eslint-plugin-react": "^7.14.3"
+    },
+    "devDependencies": {},
+    "peerDependencies": {
+        "eslint": ">=6"
+    },
+    "bugs": {
+        "url": "https://github.com/cmux/koot-eslint"
+    }
+}
