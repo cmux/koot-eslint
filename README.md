@@ -52,6 +52,7 @@ module.exports = {
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
     "javascript.implicitProjectConfig.experimentalDecorators": true,
     "javascript.validate.enable": false,
+    "typescript.validate.enable": true,
     "eslint.autoFixOnSave": true,
     "eslint.validate": [
         "javascript",
