@@ -22,32 +22,28 @@ const ruleTester = new RuleTester({
     }
 });
 
-const transformCodeToOneLine = str =>
-    str
-        .replace(/\r/g, '')
-        .replace(/\n/g, '')
-        .replace(/\s{2}/g, '');
+//
 
-ruleTester.run('koot/lifecycle-no-arrow-function', rule, {
+const tests = {
     valid: [
         {
-            code: transformCodeToOneLine(`
+            code: `
 class Hello extends React.Component {
     render() {
         return <div />;
     };
-}`)
+}`
         }
     ],
 
     invalid: [
         {
-            code: transformCodeToOneLine(`
+            code: `
 class Hello extends React.Component {
     render = () => {
         return <div />;
     };
-}`),
+}`,
             errors: [
                 {
                     message:
@@ -56,13 +52,13 @@ class Hello extends React.Component {
             ]
         },
         {
-            code: transformCodeToOneLine(`
+            code: `
 class Hello extends React.Component {
     componentDidMount = () => {};
     render() {
         return <div />;
     };
-}`),
+}`,
             errors: [
                 {
                     message:
@@ -71,4 +67,17 @@ class Hello extends React.Component {
             ]
         }
     ]
-});
+};
+
+//
+
+for (const cases of Object.values(tests)) {
+    for (const t of cases) {
+        t.code = t.code
+            .replace(/\r/g, '')
+            .replace(/\n/g, '')
+            .replace(/\s{2}/g, '');
+    }
+}
+
+ruleTester.run('koot/lifecycle-no-arrow-function', rule, tests);
