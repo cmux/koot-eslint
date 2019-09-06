@@ -55,7 +55,7 @@ module.exports = {
                     context.report({
                         node,
                         message:
-                            '{{propertyName}} is a React lifecycle method, and should not be an arrow function. Use an instance method instead.',
+                            '`{{propertyName}}` is a React lifecycle method, and should not be an arrow function. Use an instance method instead. For example: `{{propertyName}}() {}`.',
                         data: {
                             propertyName
                         }

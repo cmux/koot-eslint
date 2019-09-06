@@ -1,7 +1,13 @@
+const path = require('path');
+
 const rule = require('../../rules/react/lifecycle-no-arrow-function');
 const RuleTester = require('eslint').RuleTester;
 
 const ruleTester = new RuleTester({
+    parser: path.resolve(
+        __dirname,
+        '../../../../node_modules/babel-eslint/lib/index.js'
+    ),
     parserOptions: {
         ecmaVersion: 2019,
         sourceType: 'module',
@@ -10,35 +16,59 @@ const ruleTester = new RuleTester({
             impliedStrict: true,
             jsx: true
         }
+    },
+    settings: {
+        react: { version: '16.4.0' }
     }
 });
 
-const result = ruleTester.run('koot/lifecycle-no-arrow-function', rule, {
+const transformCodeToOneLine = str =>
+    str
+        .replace(/\r/g, '')
+        .replace(/\n/g, '')
+        .replace(/\s{2}/g, '');
+
+ruleTester.run('koot/lifecycle-no-arrow-function', rule, {
     valid: [
         {
-            code: `
-            class Hello extends React.Component {
-                render() {
-                    return <div />;
-                };
-            }
-            `,
-            settings: { react: { version: '16.4.0' } }
+            code: transformCodeToOneLine(`
+class Hello extends React.Component {
+    render() {
+        return <div />;
+    };
+}`)
         }
     ],
+
     invalid: [
         {
-            code: `
-            class Hello extends React.Component {
-                render = () => {
-                    return <div />;
-                };
-            }
-            `,
-            settings: { react: { version: '16.4.0' } },
-            errors: [{ message: 'Unexpected invalid variable.' }]
+            code: transformCodeToOneLine(`
+class Hello extends React.Component {
+    render = () => {
+        return <div />;
+    };
+}`),
+            errors: [
+                {
+                    message:
+                        '`render` is a React lifecycle method, and should not be an arrow function. Use an instance method instead. For example: `render() {}`.'
+                }
+            ]
+        },
+        {
+            code: transformCodeToOneLine(`
+class Hello extends React.Component {
+    componentDidMount = () => {};
+    render() {
+        return <div />;
+    };
+}`),
+            errors: [
+                {
+                    message:
+                        '`componentDidMount` is a React lifecycle method, and should not be an arrow function. Use an instance method instead. For example: `componentDidMount() {}`.'
+                }
+            ]
         }
     ]
 });
-
-console.log(result);
