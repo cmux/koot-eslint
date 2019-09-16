@@ -40,7 +40,7 @@
         "chalk": "^2.4.2",
         "cli-spinners": "^2.2.0",
         "crlf": "^1.1.1",
-        "eslint": "^6.3.0",
+        "eslint": "^6.4.0",
         "eslint-config-koot": "file:./packages/eslint-config-koot",
         "eslint-plugin-koot": "file:./packages/eslint-plugin-koot",
         "fs-extra": "^8.1.0",

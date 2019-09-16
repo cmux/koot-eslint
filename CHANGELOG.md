@@ -1,15 +1,22 @@
-## 1.3.0
+## [Unreleased]
 
-**2019-09-05**
+-   `ESLint` 对应版本更新到 `>=6.4.0`
+
+新增规则
+
+-   `'no-import-assign': 'error'`
+    <br>禁止对引入的 module 进行重新赋值
+-   `'prefer-regex-literals': 'warn'`
+    <br>警告不必要的正则表达式类的使用
+
+## [1.3.0] - 2019-09-05
 
 新增规则
 
 -   `'koot/lifecycle-no-arrow-function': 'warn'`
     <br>React: 警告使用箭头函数编写的生命周期方法
 
-## 1.2.0
-
-**2019-09-02**
+## [1.2.0] - 2019-09-02
 
 新增规则
 

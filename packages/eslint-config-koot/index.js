@@ -53,6 +53,12 @@ module.exports = {
         'import/no-extraneous-dependencies': 0,
         'import/prefer-default-export': 0,
 
+        /** 禁止对引入的 module 进行重新赋值 */
+        'no-import-assign': 'error',
+
+        /** 警告不必要的正则表达式类的使用 */
+        'prefer-regex-literals': 'warn',
+
         /** 警告 console 的使用 */
         'no-console': 'warn',
 
