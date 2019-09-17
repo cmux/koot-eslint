@@ -1,6 +1,6 @@
 {
     "name": "eslint-plugin-koot",
-    "version": "1.3.0",
+    "version": "1.4.0",
     "description": "ESLint plugins used by Koot.js & its boilerplate",
     "main": "index.js",
     "author": {
