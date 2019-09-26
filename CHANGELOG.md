@@ -1,5 +1,14 @@
 ## [Unreleased]
 
+## [1.5.0] - 2019-09-26
+
+调整规则
+
+-   **no-console**
+    -   调整前: `'warn'`
+    -   调整后: `['warn', { allow: ['warn', 'error'] }]`
+    -   调整后，将不再会有针对 `console.warn()` 和 `console.error()` 的警告 (黄色提示)
+
 ## [1.4.0] - 2019-09-17
 
 -   `ESLint` 对应版本更新到 `>=6.4.0`

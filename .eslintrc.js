@@ -7,8 +7,5 @@ module.exports = {
         amd: true,
         es6: true,
         jest: true
-    },
-    rules: {
-        'no-console': 0
     }
 };

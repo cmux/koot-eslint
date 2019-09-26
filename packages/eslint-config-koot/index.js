@@ -59,8 +59,8 @@ module.exports = {
         /** 警告不必要的正则表达式类的使用 */
         'prefer-regex-literals': 'warn',
 
-        /** 警告 console 的使用 */
-        'no-console': 'warn',
+        /** 警告部分 console 日志的使用 */
+        'no-console': ['warn', { allow: ['warn', 'error'] }],
 
         /** 警告多个空行 */
         'no-multiple-empty-lines': [
