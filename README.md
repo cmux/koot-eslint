@@ -15,6 +15,7 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 ```javascript
 module.exports = {
     // ...
+    root: true,
     extends: ['koot']
     // ...
 };
