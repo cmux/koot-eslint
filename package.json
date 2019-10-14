@@ -45,7 +45,7 @@
         "eslint-plugin-koot": "file:./packages/eslint-plugin-koot",
         "fs-extra": "^8.1.0",
         "glob-promise": "^3.4.0",
-        "husky": "^3.0.8",
+        "husky": "^3.0.9",
         "inquirer": "^7.0.0",
         "lerna": "^3.17.0",
         "lerna-wizard": "^1.1.1",
