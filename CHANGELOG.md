@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+更新依赖库
+
+-   `@typescript-eslint/eslint-plugin` -> _2.5.0_
+-   `@typescript-eslint/parser` -> _2.5.0_
+-   `eslint-plugin-react-hooks` -> _2.2.0_
+
 ## [1.5.0] - 2019-09-26
 
 调整规则
