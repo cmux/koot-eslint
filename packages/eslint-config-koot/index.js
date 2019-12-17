@@ -40,7 +40,7 @@ module.exports = {
         Project: 'readonly'
     },
 
-    plugins: ['prettier', 'koot'],
+    plugins: ['koot'],
 
     settings: {
         'import/ignore': ['node_modules']

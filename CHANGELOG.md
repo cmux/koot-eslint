@@ -1,10 +1,21 @@
 ## [Unreleased]
 
+## [2.0.0] - 2019-12-17
+
+**重大改动**
+
+-   移除依赖库
+    -   `eslint-plugin-prettier`
+
 更新依赖库
 
--   `@typescript-eslint/eslint-plugin` -> _2.5.0_
--   `@typescript-eslint/parser` -> _2.5.0_
--   `eslint-plugin-react-hooks` -> _2.2.0_
+-   `@typescript-eslint/eslint-plugin` -> _2.12.0_
+-   `@typescript-eslint/parser` -> _2.12.0_
+-   `eslint-config-react-app` -> _5.1.0_
+-   `eslint-plugin-flowtype` -> _4.5.2_
+-   `eslint-plugin-import` -> _2.19.1_
+-   `eslint-plugin-react` -> _7.17.0_
+-   `eslint-plugin-react-hooks` -> _2.3.0_
 
 ## [1.5.0] - 2019-09-26
 
