@@ -7,7 +7,10 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 1. 安装 `eslint` 和 `eslint-config-koot` 为开发依赖包
 
 ```bash
+// NPM
 > npm i eslint eslint-config-koot --save-dev
+// Yarn
+> yarn add eslint eslint-config-koot --dev
 ```
 
 2. 添加或编辑 _ESLint_ 配置文件 (`.eslintrc.js`)，将 `koot` 添加至 `extends` 选项中
@@ -37,7 +40,10 @@ module.exports = {
 3. 安装 `prettier` `prettier-eslint` `husky` 以及 `lint-staged` 为开发依赖包
 
 ```bash
+// NPM
 > npm i prettier prettier-eslint husky lint-staged --save-dev
+// Yarn
+> yarn add prettier prettier-eslint husky lint-staged --dev
 ```
 
 4. 在项目根目录中创建名为 `.vscode` 的目录，并在该文件夹内创建名为 `settings.json` 的文件，其内容为：
