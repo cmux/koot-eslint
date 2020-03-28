@@ -12,8 +12,8 @@ module.exports = {
         ecmaFeatures: {
             globalReturn: false,
             impliedStrict: true,
-            jsx: true
-        }
+            jsx: true,
+        },
     },
 
     env: {
@@ -21,7 +21,7 @@ module.exports = {
         node: true,
         commonjs: true,
         es6: true,
-        amd: true
+        amd: true,
     },
 
     globals: {
@@ -37,17 +37,21 @@ module.exports = {
         ActionTypes: 'readonly',
         Api: 'readonly',
         Store: 'readonly',
-        Project: 'readonly'
+        Project: 'readonly',
     },
 
     plugins: ['koot'],
 
     settings: {
-        'import/ignore': ['node_modules']
+        'import/ignore': ['node_modules'],
     },
 
     rules: {
         'no-underscore-dangle': 0,
+
+        /** 对象、数组、函数等结尾的逗号 */
+        'comma-dangle': ['warn', 'always-multiline'],
+
         'import/imports-first': ['error', 'absolute-first'],
         'import/newline-after-import': 'error',
         'import/no-extraneous-dependencies': 0,
@@ -68,8 +72,8 @@ module.exports = {
             {
                 max: 2,
                 maxEOF: 1,
-                maxBOF: 1
-            }
+                maxBOF: 1,
+            },
         ],
 
         /** 如果变量无改变，优先使用 const */
@@ -77,16 +81,16 @@ module.exports = {
             'warn',
             {
                 destructuring: 'any',
-                ignoreReadBeforeAssign: false
-            }
+                ignoreReadBeforeAssign: false,
+            },
         ],
 
         // React / JSX
         'react/jsx-filename-extension': [
             1,
             {
-                extensions: ['.js', '.jsx', '.ts', '.tsx']
-            }
+                extensions: ['.js', '.jsx', '.ts', '.tsx'],
+            },
         ],
         'react/prop-types': 0,
         /** React: 不允许使用不安全的生命周期方法 (eg: componentWillMount) */
@@ -111,7 +115,7 @@ module.exports = {
         'react/jsx-no-bind': 'warn',
 
         /** React: 警告使用箭头函数编写的生命周期方法 */
-        'koot/lifecycle-no-arrow-function': 'warn'
+        'koot/lifecycle-no-arrow-function': 'warn',
     },
 
     overrides: [
@@ -121,7 +125,7 @@ module.exports = {
             parser: '@typescript-eslint/parser',
             parserOptions: {
                 // typescript-eslint specific options
-                warnOnUnsupportedTypeScriptVersion: true
+                warnOnUnsupportedTypeScriptVersion: true,
             },
             plugins: ['prettier', '@typescript-eslint'],
             rules: Object.assign(
@@ -129,9 +133,9 @@ module.exports = {
                 tsRecommended1.overrides[0].rules,
                 tsRecommended2.rules,
                 {
-                    '@typescript-eslint/no-angle-bracket-type-assertion': 0
+                    '@typescript-eslint/no-angle-bracket-type-assertion': 0,
                 }
-            )
-        }
-    ]
+            ),
+        },
+    ],
 };

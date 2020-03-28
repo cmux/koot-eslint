@@ -1,5 +1,24 @@
 ## [Unreleased]
 
+## [1.7.0] - 2020-03-25
+
+新增规则
+
+-   `'comma-dangle': ['warn', 'always-multiline']`
+    <br>建议对对象、数组等区域的跨行代码结尾添加逗号
+
+更新依赖库
+
+-   `@typescript-eslint/eslint-plugin` -> _^2.25.0_
+-   `@typescript-eslint/parser` -> _^2.25.0_
+-   `babel-eslint` -> _^10.1.0_
+-   `eslint-config-prettier` -> _^6.10.1_
+-   `eslint-config-react-app` -> _^5.2.1_
+-   `eslint-plugin-flowtype` -> _^4.7.0_
+-   `eslint-plugin-import` -> _^2.20.1_
+-   `eslint-plugin-react` -> _^7.19.0_
+-   `eslint-plugin-react-hooks` -> _^3.0.0_
+
 ## [1.6.0] - 2019-12-17
 
 更新依赖库

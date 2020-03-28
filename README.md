@@ -19,7 +19,7 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 module.exports = {
     // ...
     root: true,
-    extends: ['koot']
+    extends: ['koot'],
     // ...
 };
 ```
@@ -57,6 +57,7 @@ module.exports = {
     "editor.codeActionsOnSave": {
         "source.fixAll": true
     },
+    "eslint.codeActionsOnSave.mode": "problems",
     "eslint.validate": [
         "javascript",
         "javascriptreact",
@@ -98,7 +99,7 @@ module.exports = {
     useTabs: false,
     semi: true,
     bracketSpacing: true,
-    eslintIntegration: true
+    eslintIntegration: true,
 };
 ```
 
