@@ -50,7 +50,16 @@ module.exports = {
         'no-underscore-dangle': 0,
 
         /** 对象、数组、函数等结尾的逗号 */
-        'comma-dangle': ['warn', 'always-multiline'],
+        'comma-dangle': [
+            'warn',
+            {
+                arrays: 'always-multiline',
+                objects: 'always-multiline',
+                imports: 'always-multiline',
+                exports: 'always-multiline',
+                functions: 'ignore',
+            },
+        ],
 
         'import/imports-first': ['error', 'absolute-first'],
         'import/newline-after-import': 'error',
