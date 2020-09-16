@@ -1,5 +1,24 @@
 ## [Unreleased]
 
+## [2.0.0] - 2020-09-16
+
+重大更新
+
+-   `eslint` 最低需求提升到 `7.0.0`
+-   _TypeScript_ 最低需求提升到 `3.3.1`
+
+更新依赖库
+
+-   `@typescript-eslint/eslint-plugin` -> _^4.1.1_
+-   `@typescript-eslint/parser` -> _^4.1.1_
+-   `eslint-config-prettier` -> _^6.11.0_
+-   `eslint-plugin-flowtype` -> _^5.2.0_
+-   `eslint-plugin-import` -> _^2.22.0_
+-   `eslint-plugin-jsx-a11y` -> _^6.3.1_
+-   `eslint-plugin-prettier` -> _^3.1.4_
+-   `eslint-plugin-react` -> _^7.20.6_
+-   `eslint-plugin-react-hooks` -> _^4.1.2_
+
 ## [1.7.0] - 2020-03-25
 
 新增规则

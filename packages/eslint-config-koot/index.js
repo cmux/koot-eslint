@@ -1,6 +1,5 @@
-const tsRecommended1 = require('@typescript-eslint/eslint-plugin/dist/configs/eslint-recommended.js')
-    .default;
-const tsRecommended2 = require('@typescript-eslint/eslint-plugin/dist/configs/recommended.json');
+const tsRecommended1 = require('@typescript-eslint/eslint-plugin/dist/configs/eslint-recommended.js');
+const tsRecommended2 = require('@typescript-eslint/eslint-plugin/dist/configs/recommended.js');
 
 module.exports = {
     extends: ['react-app', 'prettier', 'prettier/react'],
