@@ -1,5 +1,21 @@
 ## [Unreleased]
 
+## [3.0.0] - 2020-10-22
+
+重大更新
+
+-   _React_ 最低需求提升到 `17.0.0`
+-   针对全新 _JSX_ 转译器，现在不再要求必须引入 `react`
+
+更新依赖库
+
+-   `@typescript-eslint/eslint-plugin` -> _^4.5.0_
+-   `@typescript-eslint/parser` -> _^4.5.0_
+-   `eslint-config-prettier` -> _^6.14.0_
+-   `eslint-plugin-import` -> _^2.22.1_
+-   `eslint-plugin-react` -> _^7.21.5_
+-   `eslint-plugin-react-hooks` -> _^4.2.0_
+
 ## [2.0.0] - 2020-09-16
 
 重大更新

@@ -38,9 +38,9 @@
     "license": "Apache-2.0",
     "devDependencies": {
         "chalk": "^4.1.0",
-        "cli-spinners": "^2.4.0",
+        "cli-spinners": "^2.5.0",
         "crlf": "^1.1.1",
-        "eslint": "^7.9.0",
+        "eslint": "^7.11.0",
         "eslint-config-koot": "file:./packages/eslint-config-koot",
         "eslint-plugin-koot": "file:./packages/eslint-plugin-koot",
         "fs-extra": "^9.0.1",
@@ -49,12 +49,12 @@
         "inquirer": "^7.3.3",
         "lerna": "^3.22.1",
         "lerna-wizard": "^1.1.1",
-        "lint-staged": "^10.3.0",
-        "mocha": "^8.1.3",
+        "lint-staged": "^10.4.2",
+        "mocha": "^8.2.0",
         "ora": "^5.1.0",
         "prettier": "^2.1.2",
         "prettier-eslint": "^11.0.0",
-        "simple-git": "^2.20.1"
+        "simple-git": "^2.21.0"
     },
     "eslintIgnore": [
         "node_modules/**/*"
