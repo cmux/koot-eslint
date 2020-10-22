@@ -1,5 +1,22 @@
+const semver = require('semver');
 const tsRecommended1 = require('@typescript-eslint/eslint-plugin/dist/configs/eslint-recommended.js');
 const tsRecommended2 = require('@typescript-eslint/eslint-plugin/dist/configs/recommended.js');
+
+const { version: reactVersion } = require('react/package.json');
+
+// ============================================================================
+
+const ruleReact17NewJSXTransform = semver.satisfies(
+    semver.valid(semver.coerce(reactVersion)),
+    '>=17.0.0'
+)
+    ? {
+          'react/jsx-uses-react': 'off',
+          'react/react-in-jsx-scope': 'off',
+      }
+    : {};
+
+// ============================================================================
 
 module.exports = {
     extends: ['react-app', 'prettier', 'prettier/react'],
@@ -122,12 +139,10 @@ module.exports = {
         /** JSX: 警告在 render 中使用使用的 bind 或箭头函数 */
         'react/jsx-no-bind': 'warn',
 
-        // React 17: New transform
-        'react/jsx-uses-react': 'off',
-        'react/react-in-jsx-scope': 'off',
-
         /** React: 警告使用箭头函数编写的生命周期方法 */
         'koot/lifecycle-no-arrow-function': 'warn',
+
+        ...ruleReact17NewJSXTransform,
     },
 
     overrides: [

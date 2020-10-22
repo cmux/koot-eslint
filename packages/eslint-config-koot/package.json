@@ -36,14 +36,15 @@
         "eslint-plugin-koot": "^3.0.0",
         "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-react": "^7.21.5",
-        "eslint-plugin-react-hooks": "^4.2.0"
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "semver": "^7.3.2"
     },
     "devDependencies": {
-        "react": ">=17.0.0"
+        "react": ">=16.0.0"
     },
     "peerDependencies": {
         "eslint": ">=7.0.0",
-        "react": ">=17.0.0"
+        "react": ">=16.0.0"
     },
     "bugs": {
         "url": "https://github.com/cmux/koot-eslint"
