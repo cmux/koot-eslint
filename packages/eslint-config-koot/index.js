@@ -2,19 +2,27 @@ const semver = require('semver');
 const tsRecommended1 = require('@typescript-eslint/eslint-plugin/dist/configs/eslint-recommended.js');
 const tsRecommended2 = require('@typescript-eslint/eslint-plugin/dist/configs/recommended.js');
 
-const { version: reactVersion } = require('react/package.json');
+const packageReact = (() => {
+    try {
+        return require('react/package.json');
+    } catch (e) {
+        return '';
+    }
+})();
 
 // ============================================================================
 
-const ruleReact17NewJSXTransform = semver.satisfies(
-    semver.valid(semver.coerce(reactVersion)),
-    '>=17.0.0'
-)
-    ? {
-          'react/jsx-uses-react': 'off',
-          'react/react-in-jsx-scope': 'off',
-      }
-    : {};
+const ruleReact17NewJSXTransform =
+    packageReact &&
+    semver.satisfies(
+        semver.valid(semver.coerce(packageReact.version)),
+        '>=17.0.0'
+    )
+        ? {
+              'react/jsx-uses-react': 'off',
+              'react/react-in-jsx-scope': 'off',
+          }
+        : {};
 
 // ============================================================================
 
