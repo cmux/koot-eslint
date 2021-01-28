@@ -67,7 +67,7 @@ module.exports = {
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
-    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "js/ts.implicitProjectConfig.experimentalDecorators": true,
     "javascript.validate.enable": false,
     "typescript.validate.enable": true,
     "[json]": {
