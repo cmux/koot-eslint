@@ -107,6 +107,9 @@ module.exports = {
 6. 修改 `package.json`，添加以下内容
 
 ```json
+    "scripts": {
+        "postinstall": "husky install"
+    },
     "husky": {
         "hooks": {
             "pre-commit": "lint-staged"
