@@ -108,7 +108,7 @@ module.exports = {
 
 ```json
     "scripts": {
-        "postinstall": "husky install"
+        "prepare": "husky install"
     },
     "husky": {
         "hooks": {
