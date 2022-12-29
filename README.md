@@ -22,11 +22,9 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 
 ```json
 {
-    // ...
     "root": true,
-    "extends": ["koot"],
-    // ...
-};
+    "extends": ["koot"]
+}
 ```
 
 ## 推荐使用的开发环境
@@ -93,25 +91,26 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 }
 ```
 
-5. 在项目根目录中创建名为 `.prettierrc.js` 的文件，其内容为：
+5. 在项目根目录中创建名为 `.prettierrc.json` 的文件，其内容为：
 
 ```javascript
-module.exports = {
-    printWidth: 80,
-    singleQuote: true,
-    tabWidth: 4,
-    jsxBracketSameLine: false,
-    useTabs: false,
-    semi: true,
-    bracketSpacing: true,
-    eslintIntegration: true,
-    endOfLine: 'lf',
-};
+{
+    "printWidth": 80,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "jsxBracketSameLine": false,
+    "useTabs": false,
+    "semi": true,
+    "bracketSpacing": true,
+    "eslintIntegration": true,
+    "endOfLine": "lf"
+}
 ```
 
 6. 修改 `package.json`，添加以下内容
 
 ```json
+{
     "scripts": {
         "prepare": "husky install"
     },
@@ -121,14 +120,10 @@ module.exports = {
         }
     },
     "lint-staged": {
-        "*.{js,jsx,cjs,mjs,ts,tsx}": [
-            "eslint --fix",
-            "prettier --write"
-        ],
-        "*.{json,md,css,less,sass,scss}": [
-            "prettier --write"
-        ]
+        "*.{js,jsx,cjs,mjs,ts,tsx}": ["eslint --fix", "prettier --write"],
+        "*.{json,md,css,less,sass,scss}": ["prettier --write"]
     }
+}
 ```
 
 7. 重启 _VS Code_
