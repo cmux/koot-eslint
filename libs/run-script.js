@@ -1,6 +1,6 @@
 import { spawn } from 'child_process';
 
-import logRunScript from './log/run-script';
+import logRunScript from './log/run-script.js';
 
 /**
  * 运行指定脚本

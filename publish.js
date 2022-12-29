@@ -1,16 +1,20 @@
 /* eslint-disable no-console */
 
 import fs from 'fs-extra';
-import path from 'path';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import inquirer from 'inquirer';
 import crlf from 'crlf';
 import glob from 'glob-promise';
+import simpleGit from 'simple-git';
 
-import runScript from './libs/run-script';
-import logWelcome from './libs/log/welcome';
-import logAbort from './libs/log/abort';
-import logFinish from './libs/log/finish';
-import spinner from './libs/spinner';
+import runScript from './libs/run-script.js';
+import logWelcome from './libs/log/welcome.js';
+import logAbort from './libs/log/abort.js';
+import logFinish from './libs/log/finish.js';
+import spinner from './libs/spinner.js';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const prePublish = async () => {
     const title = 'pre-publish';
@@ -41,7 +45,7 @@ const prePublish = async () => {
     }
 
     // git commit
-    const git = require('simple-git/promise')(__dirname);
+    const git = simpleGit(__dirname);
     const complete = () => {
         waiting.stop();
         spinner(title).succeed();
