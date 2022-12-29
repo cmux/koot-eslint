@@ -1,7 +1,7 @@
 {
     "name": "eslint-config-koot",
     "type": "commonjs",
-    "version": "3.1.1",
+    "version": "4.0.0",
     "description": "ESLint configuration used by Koot.js & its boilerplate",
     "author": {
         "name": "diablohu",
@@ -38,7 +38,7 @@
         "eslint-plugin-flowtype": "^8.0.3",
         "eslint-plugin-import": "^2.26.0",
         "eslint-plugin-jsx-a11y": "^6.6.1",
-        "eslint-plugin-koot": "^3.0.0",
+        "eslint-plugin-koot": "^4.0.0",
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.31.11",
         "eslint-plugin-react-hooks": "^4.6.0",
