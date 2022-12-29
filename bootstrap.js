@@ -1,7 +1,9 @@
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { spawn } from 'child_process';
 
-const runCmd = async cmd => {
+const runCmd = async (cmd) => {
     // print name
     console.log('\n');
     console.log(`\x1b[43m \x1b[0m\x1b[33m ` + cmd + `\x1b[0m`);
@@ -9,10 +11,10 @@ const runCmd = async cmd => {
 
     // spawn
     const chunks = cmd.split(' ');
-    await new Promise(resolve => {
-        const child = require('child_process').spawn(chunks.shift(), chunks, {
+    await new Promise((resolve) => {
+        const child = spawn(chunks.shift(), chunks, {
             stdio: 'inherit',
-            shell: true
+            shell: true,
         });
         child.on('close', () => {
             resolve();
@@ -23,7 +25,10 @@ const runCmd = async cmd => {
 const run = async () => {
     // 检查 `lerna` 是否安装到本地依赖
     const lernaInstalled = fs.existsSync(
-        path.resolve(__dirname, 'node_modules/lerna')
+        path.resolve(
+            dirname(fileURLToPath(import.meta.url)),
+            'node_modules/lerna'
+        )
     );
 
     if (lernaInstalled) await runCmd(`lerna clean --yes"`);
@@ -37,4 +42,4 @@ const run = async () => {
     console.log('');
 };
 
-run().catch(err => console.error(err));
+run().catch((err) => console.error(err));

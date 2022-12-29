@@ -27,9 +27,9 @@ const ruleReact17NewJSXTransform =
 // ============================================================================
 
 module.exports = {
-    extends: ['react-app', 'prettier', 'prettier/react'],
+    extends: ['react-app', 'prettier'],
 
-    parser: 'babel-eslint',
+    parser: '@babel/eslint-parser',
     parserOptions: {
         ecmaVersion: 2019,
         sourceType: 'module',
@@ -108,6 +108,8 @@ module.exports = {
                 maxBOF: 1,
             },
         ],
+
+        'no-var': 'error',
 
         /** 如果变量无改变，优先使用 const */
         'prefer-const': [

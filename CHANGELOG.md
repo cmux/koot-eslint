@@ -1,5 +1,15 @@
 ## [Unreleased]
 
+## [4.0.0] - 2022-12-29
+
+**重大更新 BREAKING CHANGES**
+
+-   使用全新 _ESLint_ v8
+-   现在要求项目使用 _Babel_ 并存在 _Babel_ 配置或配置文件文件
+-   _Node.js_ 最低需求提升到 `16.0.0`
+
+---
+
 ## [3.1.0] - 2020-10-22
 
 -   现在会根据安装的 _React_ 版本来确定是否启用针对全新 _JSX_ 转译器的规则
@@ -21,6 +31,8 @@
 -   `eslint-plugin-react` -> _^7.21.5_
 -   `eslint-plugin-react-hooks` -> _^4.2.0_
 
+---
+
 ## [2.0.0] - 2020-09-16
 
 重大更新
@@ -39,6 +51,8 @@
 -   `eslint-plugin-prettier` -> _^3.1.4_
 -   `eslint-plugin-react` -> _^7.20.6_
 -   `eslint-plugin-react-hooks` -> _^4.1.2_
+
+---
 
 ## [1.7.0] - 2020-03-25
 

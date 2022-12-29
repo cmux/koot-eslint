@@ -1,14 +1,16 @@
-const fs = require('fs-extra');
-const path = require('path');
-const inquirer = require('inquirer');
-const crlf = require('crlf');
-const glob = require('glob-promise');
+/* eslint-disable no-console */
 
-const runScript = require('./libs/run-script');
-const logWelcome = require('./libs/log/welcome');
-const logAbort = require('./libs/log/abort');
-const logFinish = require('./libs/log/finish');
-const spinner = require('./libs/spinner');
+import fs from 'fs-extra';
+import path from 'path';
+import inquirer from 'inquirer';
+import crlf from 'crlf';
+import glob from 'glob-promise';
+
+import runScript from './libs/run-script';
+import logWelcome from './libs/log/welcome';
+import logAbort from './libs/log/abort';
+import logFinish from './libs/log/finish';
+import spinner from './libs/spinner';
 
 const prePublish = async () => {
     const title = 'pre-publish';
@@ -68,7 +70,7 @@ const run = async () => {
     ];
 
     const dirPackages = path.resolve(__dirname, './packages');
-    const packages = (await fs.readdir(dirPackages)).filter(filename => {
+    const packages = (await fs.readdir(dirPackages)).filter((filename) => {
         const dir = path.resolve(dirPackages, filename);
         const lstat = fs.lstatSync(dir);
         if (!lstat.isDirectory()) return false;
@@ -94,7 +96,7 @@ const run = async () => {
         name: 'selected',
         message: 'Select package(s) to publish\n ',
         choices: packages,
-        default: defaultSelected
+        default: defaultSelected,
     });
     console.log('');
     if (!selected.length) {
@@ -109,15 +111,15 @@ const run = async () => {
         choices: [
             {
                 name: 'Please select a tag',
-                value: false
+                value: false,
             },
             {
                 name: 'No tag (none)',
-                value: ''
+                value: '',
             },
-            'next'
+            'next',
         ],
-        default: 0
+        default: 0,
     });
     console.log('');
     if (tag === false) {
@@ -135,4 +137,4 @@ const run = async () => {
     logFinish();
 };
 
-run().catch(async e => console.error(e));
+run().catch(async (e) => console.error(e));

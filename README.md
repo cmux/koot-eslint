@@ -2,6 +2,11 @@
 
 _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daqi](https://github.com/daqi) 提供的规则开发。
 
+## 对项目的要求
+
+-   项目中存在 _React_，不要求使用其开发，只要求安装依赖
+-   项目使用 _Babel_ 并存在 _Babel_ 配置或配置文件文件
+
 ## 如何使用
 
 1. 安装 `eslint` 和 `eslint-config-koot` 为开发依赖包
@@ -13,13 +18,13 @@ _Koot.js_ 开发及其模板项目使用的 _ESLint_ 配置规则。基于 [@Daq
 > yarn add eslint eslint-config-koot --dev
 ```
 
-2. 添加或编辑 _ESLint_ 配置文件 (`.eslintrc.js`)，将 `koot` 添加至 `extends` 选项中
+2. 添加或编辑 _ESLint_ 配置文件 (`.eslintrc.json`)，将 `koot` 添加至 `extends` 选项中
 
-```javascript
-module.exports = {
+```json
+{
     // ...
-    root: true,
-    extends: ['koot'],
+    "root": true,
+    "extends": ["koot"],
     // ...
 };
 ```
