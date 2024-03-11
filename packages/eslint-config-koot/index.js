@@ -169,7 +169,8 @@ module.exports = {
             plugins: ['prettier', '@typescript-eslint'],
             rules: Object.assign(
                 {},
-                tsRecommended1.overrides[0].rules,
+                // tsRecommended1.overrides[0].rules,
+                tsRecommended1().rules,
                 tsRecommended2.rules,
                 {
                     '@typescript-eslint/no-angle-bracket-type-assertion': 0,
