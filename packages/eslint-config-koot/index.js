@@ -1,5 +1,5 @@
 const semver = require('semver');
-const tsRecommended1 = require('@typescript-eslint/eslint-plugin/dist/configs/eslint-recommended.js');
+const tsRecommended1 = require('@typescript-eslint/eslint-plugin/use-at-your-own-risk/eslint-recommended-raw');
 const tsRecommended2 = require('@typescript-eslint/eslint-plugin/dist/configs/recommended.js');
 
 const packageReact = (() => {
