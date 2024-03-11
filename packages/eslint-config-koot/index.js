@@ -170,7 +170,7 @@ module.exports = {
             rules: Object.assign(
                 {},
                 // tsRecommended1.overrides[0].rules,
-                tsRecommended1().rules,
+                // tsRecommended1().rules,
                 tsRecommended2.rules,
                 {
                     '@typescript-eslint/no-angle-bracket-type-assertion': 0,
