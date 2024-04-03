@@ -1,7 +1,7 @@
 const semver = require('semver');
 const tsRecommended1 = require('@typescript-eslint/eslint-plugin/use-at-your-own-risk/eslint-recommended-raw');
 const {
-    recommended: tsRecommended2,
+    configs: { recommended: tsRecommended2 },
 } = require('@typescript-eslint/eslint-plugin');
 
 const packageReact = (() => {
@@ -170,7 +170,11 @@ module.exports = {
             rules: Object.assign(
                 {},
                 // tsRecommended1.overrides[0].rules,
-                tsRecommended1?.()?.rules || {},
+                (typeof tsRecommended1 === 'function'
+                    ? tsRecommended1()?.rules
+                    : typeof typeof tsRecommended1 === 'object'
+                    ? tsRecommended1.rules
+                    : undefined) || {},
                 tsRecommended2?.rules || {},
                 {
                     '@typescript-eslint/no-angle-bracket-type-assertion': 0,
